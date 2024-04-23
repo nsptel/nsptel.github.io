@@ -1,1 +1,1 @@
-export { useScrollTo } from "./useScrollTo";
+export { useScrollTo } from './useScrollTo';

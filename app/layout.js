@@ -19,7 +19,10 @@ export default function RootLayout({ children }) {
           name="keywords"
           content="Nilkumar Patel, Nilkumar Patel - software engineer, Frontend developer, Backend developer, Full-stack engineer, Portfolio website, Full-stack engineer Portfolio"
         />
-        <meta name="google-site-verification" content="5rkKSwzit5I7St6xz_JzJdrvRPUmVMom1AI8J7L9oaQ" />
+        <meta
+          name="google-site-verification"
+          content="5rkKSwzit5I7St6xz_JzJdrvRPUmVMom1AI8J7L9oaQ"
+        />
         <meta name="referrer" content="origin-when-cross-origin" />
         <meta name="creator" content="Nilkumar Patel" />
         <meta

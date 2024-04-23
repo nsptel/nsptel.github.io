@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: 'export',
   reactStrictMode: true,
   experimental: {
     appDir: true,
@@ -9,7 +9,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   webpack(config) {
     config.module.rules.push({

@@ -61,7 +61,7 @@ export function AboutSection() {
           }}
         >
           <a
-            href="/resume/assets/Resume.pdf"
+            href="/assets/Resume.pdf"
             tabIndex="0"
             className="btn"
             aria-label="Latest projects"

@@ -18,7 +18,7 @@ export function ConnectMedia() {
         <ul className="flex items-center gap-5">
           <li>
             <a
-              href="/resume/assets/Resume.pdf"
+              href="/assets/Resume.pdf"
               rel="noreferrer"
               aria-label="download resume"
               title="Download Resume"

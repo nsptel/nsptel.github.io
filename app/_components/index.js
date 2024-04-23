@@ -1,6 +1,5 @@
 export { AppHeader } from './Header';
 export { AppFooter } from './Footer';
-export { AppWrapper } from './AppWrapper';
 export { Loader } from './Loader';
 export { ConnectMedia } from './ConnectMedia';
 export { HeadingDivider } from './HeadingDivider';

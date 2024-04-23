@@ -1,11 +1,11 @@
-import { AppWrapper } from '@/_components';
+import { AppWrapper } from '@/_components/AppWrapper';
 import 'styles/globals.css';
 
 // TODO: Next `metadata` not working somehow. Manually added the meta tag temporarily.
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <head>
         <meta name="application-name" content="Portfolio: Nilkumar Patel" />
         <meta name="author" content="Nilkumar Patel" />

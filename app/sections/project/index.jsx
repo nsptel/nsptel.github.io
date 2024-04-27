@@ -1,5 +1,4 @@
 import { Suspense, useRef, useState } from 'react';
-import { domAnimation, LazyMotion, useInView } from 'framer-motion';
 import { HeadingDivider, Loader } from '@/_components';
 import Error from '@/error';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -7,8 +6,6 @@ import { Projects } from '@/projects/_components/Projects';
 
 export function ProjectsSection() {
   const btnRef = useRef(null);
-  const isBtnInView = useInView(btnRef, { once: true });
-  const [disableLoadButton, setDisableLoadButton] = useState(false);
 
   const [projects, setProjects] = useState([
     {
@@ -59,45 +56,36 @@ export function ProjectsSection() {
         },
       ];
     });
-    setDisableLoadButton(true);
   };
 
   return (
-    <LazyMotion features={domAnimation}>
-      <section id="projects" className="section">
-        <HeadingDivider title="Projects" />
-        <div className="h-10 md:h-14" />
+    <section id="projects" className="section">
+      <HeadingDivider title="Projects" />
+      <div className="h-10 md:h-14" />
 
-        <div className="flex flex-col items-center gap-8 md:gap-14">
-          <Suspense
-            fallback={
-              <div className="flex-center">
-                <Loader />
-              </div>
-            }
-          >
-            <ErrorBoundary FallbackComponent={Error}>
-              <Projects projects={projects} />
-            </ErrorBoundary>
-          </Suspense>
+      <div className="flex flex-col items-center gap-8 md:gap-14">
+        <Suspense
+          fallback={
+            <div className="flex-center">
+              <Loader />
+            </div>
+          }
+        >
+          <ErrorBoundary FallbackComponent={Error}>
+            <Projects projects={projects} />
+          </ErrorBoundary>
+        </Suspense>
 
-          <div
-            aria-label="See more projects"
-            tabIndex={-1}
-            ref={btnRef}
-            className="relative text-xl cursor-pointer hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-            onClick={loadMoreProjects}
-            style={{
-              transform: btnRef ? 'none' : 'translateX(-50px)',
-              opacity: isBtnInView ? 1 : 0,
-              transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s',
-              display: disableLoadButton ? 'none' : 'block',
-            }}
-          >
-            More projects
-          </div>
+        <div
+          aria-label="See more projects"
+          tabIndex={-1}
+          ref={btnRef}
+          className="relative text-xl cursor-pointer hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
+          onClick={loadMoreProjects}
+        >
+          More projects
         </div>
-      </section>
-    </LazyMotion>
+      </div>
+    </section>
   );
 }

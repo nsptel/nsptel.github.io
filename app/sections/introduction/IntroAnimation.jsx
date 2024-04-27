@@ -1,23 +1,14 @@
 import { useRef } from 'react';
-import { useInView } from 'framer-motion';
 import { useTheme } from 'next-themes';
 
 export function WelcomeAnimation() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const { theme, systemTheme } = useTheme();
   const colorMode = theme === 'system' ? systemTheme : theme;
   const darkThemeColor = colorMode === 'dark';
 
   return (
-    <div
-      ref={ref}
-      style={{
-        transform: isInView ? 'none' : 'translateX(100px)',
-        opacity: isInView ? 1 : 0,
-        transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
-      }}
-    >
+    <div ref={ref}>
       <svg
         className="BgAnimation__svg"
         viewBox="0 0 602 602"

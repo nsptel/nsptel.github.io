@@ -16,7 +16,7 @@ export function WelcomeSection() {
   const [text] = useState([
     'build robust back-end APIs',
     'create enterprise-level software solutions',
-    'build interactive UI using modern JS frameworks',
+    'build UI using modern JS frameworks',
     'develop websites',
   ]);
 

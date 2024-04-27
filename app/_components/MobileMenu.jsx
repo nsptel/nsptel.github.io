@@ -9,6 +9,7 @@ export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClose = () => setIsOpen(false);
+  const onOpen = () => setIsOpen(true);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
@@ -16,7 +17,7 @@ export function MobileMenu() {
 
   return (
     <>
-      <button>
+      <button className="p-2" onClick={onOpen}>
         <BsGrid />
       </button>
       {isOpen && (

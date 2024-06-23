@@ -6,6 +6,7 @@ import { Projects } from '@/projects/_components/Projects';
 
 export function ProjectsSection() {
   const btnRef = useRef(null);
+  const [hideMoreProjectsLink, setHideMoreProjectsLink] = useState(true);
 
   const [projects, setProjects] = useState([
     {
@@ -35,6 +36,7 @@ export function ProjectsSection() {
   ]);
 
   const loadMoreProjects = () => {
+    setHideMoreProjectsLink(false);
     setProjects((prevState) => {
       return [
         ...prevState,
@@ -76,15 +78,17 @@ export function ProjectsSection() {
           </ErrorBoundary>
         </Suspense>
 
-        <div
-          aria-label="See more projects"
-          tabIndex={-1}
-          ref={btnRef}
-          className="relative text-xl cursor-pointer hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
-          onClick={loadMoreProjects}
-        >
-          More projects
-        </div>
+        {hideMoreProjectsLink && (
+          <div
+            aria-label="See more projects"
+            tabIndex={-1}
+            ref={btnRef}
+            className="relative text-xl cursor-pointer hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
+            onClick={loadMoreProjects}
+          >
+            More projects
+          </div>
+        )}
       </div>
     </section>
   );

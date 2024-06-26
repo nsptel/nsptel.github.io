@@ -8,7 +8,7 @@ export function Logo() {
   const pathname = usePathname();
 
   return (
-    <h3 className="text-xl md:text-2xl font-bold">
+    <h3 className="text-xl hover:text-primary hover:cursor-pointer md:text-2xl font-bold">
       {pathname === SITE_ROUTES.projects ? (
         <Link href={SITE_ROUTES.home} aria-label="Go to home page" role="link">
           {SITE_STRINGS.textLogo}

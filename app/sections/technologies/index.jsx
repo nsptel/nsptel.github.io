@@ -28,7 +28,11 @@ export function TechnologiesSection() {
                 <div className="flex items-center flex-wrap gap-x-5 gap-y-8">
                   {tech.items.map((item) => (
                     <div key={item.name} className="group relative flex">
-                      <span tabIndex="0" role="img">
+                      <span
+                        tabIndex="0"
+                        className="hover:text-primary"
+                        role="img"
+                      >
                         {item.icon}
                       </span>
                       <span

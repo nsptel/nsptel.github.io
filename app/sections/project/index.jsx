@@ -83,7 +83,7 @@ export function ProjectsSection() {
             aria-label="See more projects"
             tabIndex={-1}
             ref={btnRef}
-            className="relative text-xl cursor-pointer hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
+            className="relative text-xl cursor-pointer hover:text-primary border-primary hover:no-underline after:absolute after:left-0 after:-bottom-[3px] after:h-[2px] after:w-0 after:bg-current after:transition-width after:duration-300 after:ease-in-out hover:after:w-full"
             onClick={loadMoreProjects}
           >
             More projects

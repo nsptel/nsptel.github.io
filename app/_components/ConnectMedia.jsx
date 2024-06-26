@@ -2,18 +2,24 @@
 
 import { SOCIAL_MEDIA } from '@/_constants';
 import { BsDownload } from 'react-icons/bs';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 export function ConnectMedia() {
   return (
     <nav>
       <ul className="flex items-center gap-5">
         <li>
+          <span className="hover:text-primary text-2xl">
+            <ThemeSwitcher />
+          </span>
+        </li>
+        <li>
           <a
             href="/assets/Resume.pdf"
             rel="noreferrer"
             aria-label="download resume"
             title="Download Resume"
-            className="text-2xl"
+            className="hover:text-primary text-2xl"
             download
           >
             <BsDownload />
@@ -27,7 +33,7 @@ export function ConnectMedia() {
               rel="noreferrer"
               aria-label={item.title}
               title={item.title}
-              className="text-2xl"
+              className="hover:text-primary text-2xl"
             >
               {item.icon}
             </a>

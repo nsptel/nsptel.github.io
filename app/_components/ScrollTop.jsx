@@ -16,7 +16,7 @@ export function ScrollTop() {
       href="#intro"
       onClick={onClick}
       aria-label="Scroll to top"
-      className="relative flex group"
+      className="relative flex group hover:text-primary"
     >
       <IoIosArrowDropup size={28} />
       <span

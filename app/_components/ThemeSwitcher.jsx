@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes';
 import { BsMoon, BsSun } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
+import { lightTheme, darkTheme } from '@/_constants/strings';
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,9 +19,13 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
+      onClick={() =>
+        setTheme(currentTheme === darkTheme ? lightTheme : darkTheme)
+      }
     >
-      {currentTheme === 'dark' ? <BsSun /> : <BsMoon />}
+      <span className="text-xl hover:text-primary">
+        {currentTheme === darkTheme ? <BsSun /> : <BsMoon />}
+      </span>
     </button>
   );
 };

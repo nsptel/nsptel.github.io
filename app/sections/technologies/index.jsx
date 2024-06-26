@@ -9,7 +9,7 @@ export function TechnologiesSection() {
   return (
     <section id="tech" className="section">
       <HeadingDivider title="Technologies" />
-      <p ref={textRef} tabIndex="0" className="my-5 text-2xl">
+      <p ref={textRef} tabIndex="0" className="my-5 text-xl">
         I work (have worked) with the following technologies and tools...
       </p>
 
@@ -18,7 +18,7 @@ export function TechnologiesSection() {
           {TECHNOLOGIES.map((tech, index) => {
             return (
               <div
-                key={tech.category}
+                key={index}
                 ref={stackRef}
                 className="flex flex-col gap-4 flex-1 md:flex-auto"
               >

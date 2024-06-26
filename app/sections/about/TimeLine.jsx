@@ -1,44 +1,51 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 const TimeLineData = [
-  { year: 2023, text: 'Work as a Fullstack Engineer (Angular, Django)' },
-  { year: 2021, text: 'Work as a Software Engineer (EmberJS)' },
-  { year: 2020, text: 'Start 2-year Diploma in ICT' },
-  { year: 2015, text: "Start Bachelor's in Computer Engineering" },
+  {
+    year: 2023,
+    text: 'Fullstack Engineer (Angular, Django)',
+    description:
+      'Now that I had initial exposure to how the software systems \
+    operate for a large-scale product, I moved on to the next part of my journey\
+    at SimplifyVMS. Being a full-stack engineer, I got hands-on experience \
+    working with some cutting-edge technologies here. This has been a challenging, \
+    yet rewarding role so far.',
+  },
+  {
+    year: 2021,
+    text: 'Software Engineer (EmberJS)',
+    description:
+      'So, officially, my engineering journey began in 2021 as a Software Engineer where \
+    I learned all about SDLC, applied my knowledge and skills contributing in \
+    the building of an enterprise-level software product. \
+    I continued with this work for almost 1.5 years.',
+  },
+  {
+    year: 2020,
+    text: 'Diploma in ICT',
+    description:
+      'After getting the fundamentals right, I wanted to focus on a \
+    specific part of the industry with this diploma in ICT, which helped me master \
+    some advanced concepts in web development and programming in general.',
+  },
+  {
+    year: 2015,
+    text: "Bachelor's in Computer Engineering",
+    description:
+      "I started my journey by opting for Computer Engineering for my \
+    Bachelor's in Gujarat Technological University. During my university years, \
+    I developed a deep passion for software programming, and I consistently \
+    engaged in learning new concepts and techniques in this field.",
+  },
 ];
 
 export function TimeLine() {
-  const [, setActiveItem] = useState(0);
   const carouselRef = useRef(null);
 
   const scroll = (node, left) => {
     return node.scrollTo({ left, behavior: 'smooth' });
-  };
-
-  const handleClick = (e, i) => {
-    e.preventDefault();
-
-    if (carouselRef.current) {
-      const scrollLeft = Math.floor(
-        carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length),
-      );
-
-      scroll(carouselRef.current, scrollLeft);
-    }
-  };
-
-  const handleScroll = () => {
-    if (carouselRef.current) {
-      const index = Math.round(
-        (carouselRef.current.scrollLeft /
-          (carouselRef.current.scrollWidth * 0.7)) *
-          TimeLineData.length,
-      );
-
-      setActiveItem(index);
-    }
   };
 
   useEffect(() => {
@@ -54,61 +61,39 @@ export function TimeLine() {
   }, []);
 
   return (
-    <ul
-      ref={carouselRef}
-      onScroll={handleScroll}
-      className="flex flex-row flex-nowrap gap-5 justify-between overflow-x-auto snap-x cursor-pointer hide-scroll-bar"
-    >
-      <>
-        {TimeLineData.map((item, index) => {
-          return (
-            <li
-              id={`carousel__item-${index}`}
-              key={index}
-              className="flex flex-col gap-3 snap-start w-[calc((100%/2)-30px)] sm:w-1/3 md:w-1/6"
-              onClick={(e) => handleClick(e, index)}
+    <ul className="mt-12 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+      {TimeLineData.map((data, index) => (
+        <li key={index}>
+          <div className="timeline-middle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
             >
-              <h3
-                tabIndex="0"
-                aria-label={'What do I do in ' + item.year}
-                className="flex items-center gap-4 text-2xl font-bold"
-              >
-                {`${item.year}`}
-                <svg
-                  width="208"
-                  height="6"
-                  viewBox="0 0 208 6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="fill-current"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M2.5 5.5C3.88071 5.5 5 4.38071 5 3V3.5L208 3.50002V2.50002L5 2.5V3C5 1.61929 3.88071 0.5 2.5 0.5C1.11929 0.5 0 1.61929 0 3C0 4.38071 1.11929 5.5 2.5 5.5Z"
-                    fillOpacity="0.5"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="paint0_linear"
-                      x1="-4.30412e-10"
-                      y1="0.5"
-                      x2="208"
-                      y2="0.500295"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#fff" />
-                      <stop offset="0.79478" stopColor="#fff" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </h3>
-              <p className="tracking-wide " tabIndex="0">
-                {item.text}
-              </p>
-            </li>
-          );
-        })}
-      </>
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className={
+              'timeline-' +
+              (index % 2 ? 'end' : 'start') +
+              ' md:text-' +
+              (index % 2 ? 'start' : 'end') +
+              ' mb-10'
+            }
+          >
+            <time className="font-mono italic">{data.year}</time>
+            <div className="text-lg font-black">{data.title}</div>
+            {data.description}
+          </div>
+          <hr />
+        </li>
+      ))}
     </ul>
   );
 }

@@ -45,7 +45,7 @@ export function TimeLine() {
   const carouselRef = useRef(null);
 
   const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
+    return node?.scrollTo({ left, behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export function TimeLine() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
-              fill="currentColor"
+              fill="oklch(var(--p))"
               className="h-5 w-5"
             >
               <path
@@ -80,11 +80,9 @@ export function TimeLine() {
           </div>
           <div
             className={
-              'timeline-' +
-              (index % 2 ? 'end' : 'start') +
-              ' md:text-' +
-              (index % 2 ? 'start' : 'end') +
-              ' mb-10'
+              index % 2
+                ? 'timeline-end mb-10'
+                : 'timeline-start mb-10 pb-10 md:text-end md:pb-0'
             }
           >
             <time className="font-mono italic">{data.year}</time>

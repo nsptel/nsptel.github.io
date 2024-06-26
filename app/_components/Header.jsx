@@ -1,29 +1,38 @@
 'use client';
 
-import {
-  Logo,
-  Menu,
-  ConnectMedia,
-  MobileMenu,
-  ThemeSwitcher,
-} from '@/_components';
-import { useMediaQuery } from '@/_utils';
+import { Logo, Menu, ConnectMedia } from '@/_components';
+import { BsGrid } from 'react-icons/bs';
 
 export function AppHeader() {
-  const isMobile = useMediaQuery();
-
   return (
-    <header className="pt-5 pb-5 sticky top-0 z-10 bg-inherit shadow-sm">
-      <div className="container-md">
-        <div className="flex justify-between items-center gap-3">
-          <Logo />
-          {isMobile ? <MobileMenu /> : <Menu />}
-          <div className="flex items-center gap-5">
-            {!isMobile && <ConnectMedia />}
-            <ThemeSwitcher />
+    <>
+      <header className="sticky top-0 z-10 bg-inherit shadow-sm">
+        <div>
+          <div className="container-md navbar bg-base-100">
+            <div className="navbar-start">
+              <div className="dropdown">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn mr-1 hover:text-primary btn-ghost lg:hidden"
+                >
+                  <BsGrid />
+                </div>
+                <Menu isMobile={true} />
+              </div>
+              <Logo />
+            </div>
+            <div className="navbar-center hidden lg:flex">
+              <nav>
+                <Menu />
+              </nav>
+            </div>
+            <div className="navbar-end">
+              <ConnectMedia />
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

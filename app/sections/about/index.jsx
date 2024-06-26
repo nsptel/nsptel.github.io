@@ -47,7 +47,7 @@ export function AboutSection() {
         <a
           href="/assets/Resume.pdf"
           tabIndex="0"
-          className="btn"
+          className="btn btn-primary"
           aria-label="Latest projects"
           rel="noreferrer"
           download

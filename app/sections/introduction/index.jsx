@@ -44,8 +44,9 @@ export function WelcomeSection() {
             className="text-3xl md:text-5xl xl:text-6xl font-bold"
           >
             <p>
-              Hi, I&apos;m <mark>Nilkumar (Neel)</mark> a{' '}
-              <mark>passionate</mark> software engineer.
+              Hi, I&apos;m <span className="text-primary">Nilkumar (Neel)</span>{' '}
+              a <span className="text-primary">passionate</span> software
+              engineer.
             </p>
           </h1>
 
@@ -90,7 +91,7 @@ export function WelcomeSection() {
               href="#projects"
               onClick={onClick}
               tabIndex="0"
-              className="btn"
+              className="btn btn-primary"
               aria-label="projects"
             >
               See some of my projects

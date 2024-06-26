@@ -29,7 +29,7 @@ export function ProjectItem({ project, index }) {
                 <span
                   key={tag}
                   tabIndex="0"
-                  className="px-2 text-sm leading-normal rounded bg-badge-light/50 dark:bg-badge-dark"
+                  className="px-2 text-sm leading-normal btn btn-sm btn-base hover:cursor-auto rounded bg-badge-light/50 dark:bg-badge-dark"
                 >
                   {tag}
                 </span>
@@ -42,11 +42,11 @@ export function ProjectItem({ project, index }) {
               <Link
                 href={repoUrl}
                 target="_blank"
-                className="icon-link-btn"
+                className="flex justify-center items-center hover:text-primary"
                 title="Go to Github repository"
               >
                 <VscSourceControl />
-                <span>Source</span>
+                <span className="pl-1">Source</span>
               </Link>
             )}
             {liveUrl && (

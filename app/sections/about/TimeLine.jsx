@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 const TimeLineData = [
   {
     year: 2023,
-    text: 'Fullstack Engineer (Angular, Django)',
+    title: 'Fullstack Engineer (Angular, Django, MySQL, AWS)',
     description:
       'Now that I had initial exposure to how the software systems \
     operate for a large-scale product, I moved on to the next part of my journey\
@@ -15,7 +15,7 @@ const TimeLineData = [
   },
   {
     year: 2021,
-    text: 'Software Engineer (EmberJS)',
+    title: 'Software Engineer (EmberJS, Flask, GCP)',
     description:
       'So, officially, my engineering journey began in 2021 as a Software Engineer where \
     I learned all about SDLC, applied my knowledge and skills contributing in \
@@ -24,7 +24,7 @@ const TimeLineData = [
   },
   {
     year: 2020,
-    text: 'Diploma in ICT',
+    title: 'Diploma in ICT',
     description:
       'After getting the fundamentals right, I wanted to focus on a \
     specific part of the industry with this diploma in ICT, which helped me master \
@@ -32,7 +32,7 @@ const TimeLineData = [
   },
   {
     year: 2015,
-    text: "Bachelor's in Computer Engineering",
+    title: "Bachelor's in Computer Engineering",
     description:
       "I started my journey by opting for Computer Engineering for my \
     Bachelor's in Gujarat Technological University. During my university years, \

@@ -2,6 +2,7 @@
 
 import { Logo, Menu, ConnectMedia } from '@/_components';
 import { BsGrid } from 'react-icons/bs';
+import { ThemeSwitcher } from '@/_components';
 
 export function AppHeader() {
   return (
@@ -29,6 +30,12 @@ export function AppHeader() {
             </div>
             <div className="navbar-end">
               <ConnectMedia />
+              <span class="font-bold px-5 text-3xl">&#183;</span>
+              <div>
+                <span className="hover:text-primary text-3xl">
+                  <ThemeSwitcher />
+                </span>
+              </div>
             </div>
           </div>
         </div>

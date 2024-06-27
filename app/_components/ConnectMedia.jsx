@@ -2,20 +2,11 @@
 
 import { SOCIAL_MEDIA } from '@/_constants';
 import { BsDownload } from 'react-icons/bs';
-import { ThemeSwitcher } from './ThemeSwitcher';
 
-export function ConnectMedia({ showThemeSwitcher = true }) {
+export function ConnectMedia() {
   return (
     <nav>
       <ul className="flex items-center gap-5">
-        {showThemeSwitcher ? (
-          <li>
-            <span className="hover:text-primary text-2xl">
-              <ThemeSwitcher />
-            </span>
-          </li>
-        ) : null}
-
         <li>
           <a
             href="/assets/Resume.pdf"

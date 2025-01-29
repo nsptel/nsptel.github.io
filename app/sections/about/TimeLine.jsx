@@ -4,14 +4,24 @@ import { useEffect, useRef } from 'react';
 
 const TimeLineData = [
   {
+    year: 2024,
+    title: 'Fullstack Developer (React, Ruby on Rails, PostgreSQL, Azure)',
+    description:
+      'To further my knowledge across different domains and to gain valuable \
+      experience, I joined HealthPRO Canada as a Fullstack Developer. I \
+      started contributing to making a modern contract management SaaS. \
+      Cleaning and migrating old data, reducing performance bottlenecks and \
+      improving the UI/UX of the legacy system has been my main focus since \
+      day-one.',
+  },
+  {
     year: 2023,
     title: 'Fullstack Engineer (Angular, Django, MySQL, AWS)',
     description:
       'Now that I had initial exposure to how the software systems \
     operate for a large-scale product, I moved on to the next part of my journey\
-    at SimplifyVMS. Being a full-stack engineer, I got hands-on experience \
-    working with some cutting-edge technologies here. This has been a challenging, \
-    yet rewarding role so far.',
+    at SimplifyVMS. As a Full-Stack Engineer, I got hands-on experience \
+    working with some cutting-edge technologies.',
   },
   {
     year: 2021,

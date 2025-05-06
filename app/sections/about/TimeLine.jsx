@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 const TimeLineData = [
   {
     year: 2024,
-    title: 'Fullstack Developer (React, Ruby on Rails, PostgreSQL, Azure)',
+    title: 'Full Stack Developer (React, Django, RoR, PostgreSQL, Azure)',
     description:
       'To further my knowledge across different domains and to gain valuable \
       experience, I joined HealthPRO Canada as a Fullstack Developer. I \
@@ -16,7 +16,7 @@ const TimeLineData = [
   },
   {
     year: 2023,
-    title: 'Fullstack Engineer (Angular, Django, MySQL, AWS)',
+    title: 'Full Stack Engineer (Angular, Django, MySQL, AWS)',
     description:
       'Now that I had initial exposure to how the software systems \
     operate for a large-scale product, I moved on to the next part of my journey\
